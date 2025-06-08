@@ -1,6 +1,7 @@
 package com.emprendecix.modelos;
 
 import com.emprendecix.dto.UsuarioDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
@@ -17,6 +18,7 @@ public class Usuario {
     @Column(name = "usua_nombre_usuario", nullable = false, unique = true, length = 100)
     private String nombreUsuario;
 
+    @JsonIgnore
     @Column(name = "usua_contrasena_hash", nullable = false)
     private String contrasenaHash;
 
